@@ -3,14 +3,22 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Aerodynamics
+Introduction to Aerodynamics
 ==========================
 
-aerodynamics notes!
+Kabir's notes on aerodynamics, covering material from AE 325 at the University of Michigan. 
+Inspired by Professor Fidkowski's notes and Alasdair Gray's AE 523 notes site.
 
 .. toctree::
    :maxdepth: 2
    :caption: Contents:
 
    basics/basics
+   kin_dyn/kinematics
+   kin_dyn/dynamics
+   potential/potential
+   airfoils/airfoils
+   viscous/viscous
+   finite_wings/finite_wings
+   
 
