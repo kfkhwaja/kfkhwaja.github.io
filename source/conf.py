@@ -38,3 +38,4 @@ mathjax3_config = {
 html_theme = 'sphinxawesome_theme'
 html_static_path = ['_static']
 html_permalinks_icon = '<span>#</span>'
+html_title = "Aerodynamics Notes"
