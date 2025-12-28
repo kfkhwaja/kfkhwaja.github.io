@@ -12,11 +12,5 @@ aerodynamics notes!
    :maxdepth: 2
    :caption: Contents:
 
-   basics/What is aerodynamics?
-   basics/Ideal Gas and Continuum Assumption
-   basics/Relevant Fluid Quantities
-   basics/Reynolds and Mach numbers
-   basics/Types of Flows
-   basics/Aerodynamic Forces and Moments
-   basics/Some Important Math
+   basics/basics
 
