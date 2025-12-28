@@ -100,16 +100,228 @@
 </nav>
 <div id="content" role="main">
 <section id="basics">
-<h1>Basics<a class="headerlink" href="#basics" title="Link to this heading"><span>#</span></a></h1>
-<p>What is aerodynamics?
-Ideal Gas and Continuum Assumption
-Relevant Fluid Quantities
-Reynolds and Mach numbers
-Types of Flows
-Aerodynamic Forces and Moments
-Some Important Math</p>
+<span id="sec-basics"></span><h1>Basics<a class="headerlink" href="#basics" title="Link to this heading"><span>#</span></a></h1>
+<p>This book is a primer on aerodynamics, covering topics found in AE 325.
+For more in-depth content, three particularly good resources are John D.
+Anderson’s <em>Fundamentals of Aerodynamics</em> textbook
+<a href="#id1"><span class="problematic" id="id2">:raw-latex:`\cite{anderson2016fundamentals}`</span></a>, Mark Drela’s MIT Fluid
+Mechanics Course <a href="#id3"><span class="problematic" id="id4">:raw-latex:`\cite{drela_mit_ocw_fluid_mechanics}`</span></a>, and
+Professor Fidkowski’s AE 325 Notes <a href="#id5"><span class="problematic" id="id6">:raw-latex:`\cite{fidkowskiAE325}`</span></a>.</p>
+<section id="what-is-aerodynamics">
+<span id="sec-what-is-aero"></span><h2>What is aerodynamics?<a class="headerlink" href="#what-is-aerodynamics" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#what-is-aerodynamics'"><span>#</span></a></h2>
+<p>Aerospace engineers design vehicles that move through the air. To
+maximize the performance of these vehicles, we want to understand the
+body forces, moments, and pressure distributions so we know how and
+where to make improvements. Aerodynamics gives us the tools to figure
+this out.</p>
+<p>In introductory physics classes we learn about <strong>classical mechanics</strong>.
+We look at the effect of forces on the motion of particles and rigid
+bodies. The real world is not made of rigid bodies, but instead
+<strong>deformable bodies</strong>. These are things that change shape, or deform,
+when pushed or pulled.</p>
+<p>To study these deformations, we change our assumptions and now treat
+materials as <strong>continuous</strong>. There are a couple key characteristics of a
+continuous material:</p>
+<ul class="simple">
+<li><p>discrete behavior of atoms/molecules are ignored</p></li>
+<li><p>material properties are defined continuously throughout</p></li>
+<li><p>it can be divided into infinitesimal elements that are also continuous</p></li>
+</ul>
+<p>Given these characteristics, we can mathematically describe the
+properties of the material using continuous functions. This gives us a
+new field of classical mechanics, called <strong>continuum mechanics</strong>.</p>
+<p>Within continuum mechanics, there are two main areas: <strong>solid
+mechanics</strong> and <strong>fluid mechanics</strong>. When you hear the word fluid, you
+might be tempted to associate it with liquids. Let’s take a step back
+and look at the states of matter. Some of the main states of matter are:</p>
+<ul class="simple">
+<li><p><strong>Solids</strong>: hold their shape, molecules packed tightly together</p></li>
+<li><p><strong>Liquids</strong>: take the shape of container, fixed volume, molecules
+relatively close together</p></li>
+<li><p><strong>Gases</strong>: take the shape and volume of container, molecules
+relatively far apart</p></li>
+<li><p><strong>Plasmas</strong>: similar to gases, but ionized (i.e. electrons move
+freely) so can be affected electromagnetic forces</p></li>
+</ul>
+<p>As it turns out, liquids, gases, and plasmas can all be treated as
+fluids! Plasmas are a little harder to deal with because we have to
+include electromagnetism. In our case, we’re just going to focus on
+gases, specifically air, but the fundamental equations we derive will
+also apply just as well to other fluids.</p>
+<p>For a more rigorous definition, a solid is a material that deforms a
+certain amount when a tangential force is applied over a certain area.
+We call a tangential force acting over some area <strong>shear stress</strong> and
+the amount of deformation is called <strong>strain</strong>. For a solid, the strain
+is proportional to the shear stress, which we relate in Eq.
+(<a class="reference external" href="#eq:solid">[eq:solid]</a>).</p>
+<div class="math notranslate nohighlight">
+\[\tau = G\theta
+    \label{eq:solid}\]</div>
+<p>A certain shear stress, <span class="math notranslate nohighlight">\(\tau\)</span>, produces a proportional strain,
+<span class="math notranslate nohighlight">\(\theta\)</span>, and these are related by the elastic modulus, <span class="math notranslate nohighlight">\(G\)</span>.</p>
+<p>A fluid is a material that keeps deforming, or flows, when a shear
+stress is applied. Imagine pushing on block of jello compared to
+skimming your hand over a pool of water. The jello will deform a certain
+amount then return to its original shape. On the other hand, the pool of
+water will keep flowing, as in Fig. (<a class="reference external" href="#fig:solid_vs_fluid">1</a>).
+Because fluids continuously deform, instead of considering the strain,
+we consider the <strong>strain rate</strong>, as shown in Eq.
+(<a class="reference external" href="#eq:fluid">[eq:fluid]</a>).</p>
+<div class="math notranslate nohighlight">
+\[\tau = \mu \dot{\theta}
+    \label{eq:fluid}\]</div>
+<p>A certain shear stress produces a proportional strain rate,
+<span class="math notranslate nohighlight">\(\dot{\theta}\)</span>, and these are related by the dynamic viscosity,
+<span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+<figure class="align-default" id="id9">
+<a class="reference internal image-reference" href="basics/images/Deformation_solid_vs_fluid.pngname:fig:solid_vs_fluid"><img alt="basics/images/Deformation_solid_vs_fluid.pngname:fig:solid_vs_fluid" src="basics/images/Deformation_solid_vs_fluid.pngname:fig:solid_vs_fluid" style="width: 65.0%;"/>
+</a>
+<figcaption>
+<p><span class="caption-text">Solid vs. fluid deformation when acted on by a shear stress
+[Wikipedia].</span><a class="headerlink" href="#id9" title="Link to this image"><span>#</span></a></p>
+</figcaption>
+</figure>
+<p>We can further divide fluid mechanics into some more fields: statics,
+kinematics, and dynamics. Statics deals with fluids at rest or constant
+velocity, so they are in equilibrium. Kinematics describes fluids in
+motion without considering the forces causing the motion. Dynamics
+describes the relation between fluids in motion and the forces causing
+that motion. We’ll cover all of these to some extent, but
+aero-<em>dynamics</em> is the best descriptor because we’re looking for ways to
+figure out <strong>how air moves and the forces that cause, or arise from that
+motion</strong>.</p>
 </section>
-</div></div>
+<section id="sec-perfect-gas">
+<span id="ideal-gas-and-continuum-assumptions"></span><h2>Ideal Gas and Continuum Assumptions<a class="headerlink" href="#sec-perfect-gas" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#sec-perfect-gas'"><span>#</span></a></h2>
+<p>Let’s make some more clearly defined assumptions about air that will
+allow us to treat it as continuous. Air is made up of a lot of molecules
+that are not in direct contact.</p>
+<p>IMFs, local thermodynamic equilibrium (LTE), mean free path</p>
+<p>avogadro’s number = 6.023 <span class="math notranslate nohighlight">\(\times 10^{23}\)</span> molecules/mol.</p>
+<p>molar volume = 0.022414 <span class="math notranslate nohighlight">\(m^3\)</span>/mol</p>
+<p>perfect gas - elastic collisions, negligible IMFs, molecular motion is
+random</p>
+<p>To describe the air, we can look at the <em>mean free path</em>. This is the
+average distance a molecule travels before colliding with another
+molecule. We’ll define it as:</p>
+<div class="center docutils container">
+<p><span class="math notranslate nohighlight">\(\lambda = \textbf{mean free path}\)</span>.</p>
+</div>
+<p>Some values for the mean free path are listed below <a class="footnote-reference brackets" href="#id8" id="id7" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a>:</p>
+<ul class="simple">
+<li><p>At STP:</p></li>
+<li><p>At 10km altitude (airplanes):</p></li>
+<li><p>At 50km altitude (weather balloons):</p></li>
+<li><p>At 100km altitude (Kármán line):</p></li>
+</ul>
+<p>can use point quantities/macroscopic behavior when quantities are well
+defined for small volumes</p>
+<div class="math notranslate nohighlight">
+\[Kn = \frac{\lambda}{L}\]</div>
+<p>consider <span class="math notranslate nohighlight">\(\rho\)</span> vs <span class="math notranslate nohighlight">\(V\)</span> plot, at super super small volumes
+will have oscillations - continuum assumption not value</p>
+<p>need <span class="math notranslate nohighlight">\(\lambda^3 &lt;&lt; V &lt;&lt; L^3\)</span></p>
+</section>
+<section id="relevant-fluid-quantities">
+<span id="sec-quantities"></span><h2>Relevant Fluid Quantities<a class="headerlink" href="#relevant-fluid-quantities" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#relevant-fluid-quantities'"><span>#</span></a></h2>
+<p>Particles bounce around a lot, so actual motion of a single particle is
+very random/chaotic. average out the randomness by looking at all the
+particles in small fluid elements to get point quantities.</p>
+<p>pressure, density, velocity, temperature, bulk modulus, viscosity,
+thermo equations</p>
+<div class="math notranslate nohighlight">
+\[p = \lim_{\Delta A \to 0} \frac{\Delta F_n}{\Delta A}
+    \label{eq:pressure}\]</div>
+<p>Density is how much mass is in a given volume.</p>
+<div class="math notranslate nohighlight">
+\[\rho = \lim_{\Delta V \to 0} \frac{\Delta m}{\Delta V}
+    \label{eq:density1}\]</div>
+<div class="math notranslate nohighlight">
+\[\rho = \frac{1}{V} \sum_{i=1}^{N} m_i
+    \label{eq:density2}\]</div>
+<p>Momentum per unit volume is the sum of momentum of individual particles
+divided by a given volume.</p>
+<div class="math notranslate nohighlight">
+\[\frac{momentum}{volume} = \rho \vec{v} = \sum_{i=1}^{N} m_i \vec{v}_i
+    \label{eq:momentum_volume}\]</div>
+<p>From here, we divide momentum per unit volume</p>
+<div class="math notranslate nohighlight">
+\[\vec{v}=\frac{\rho \vec{v}}{\rho} = \frac{\sum_{i=1}^{N} m_i \vec{v}_i}{\sum_{i=1}^{N} m_i}
+    \label{eq:velocity1}\]</div>
+<p>This seems like a roundabout way of defining velocity, but it’s useful
+because this allows us to define <em>pointwise</em> velocity. This is basically
+an averaged velocity within a fluid element. Based on our continuum
+assumption, we can therefore define the velocity at any point in the
+fluid.</p>
+<p>thermo stuff ideal gas law, universal gas constant</p>
+<figure class="align-default" id="id10">
+<a class="reference internal image-reference" href="basics/images/pressure.pdfname:fig:pressure"><img alt="basics/images/pressure.pdfname:fig:pressure" src="basics/images/pressure.pdfname:fig:pressure" style="width: 40.0%;"/>
+</a>
+<figcaption>
+<p><span class="caption-text">Pressure is the force/area acting normal to a surface.</span><a class="headerlink" href="#id10" title="Link to this image"><span>#</span></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="reynolds-and-mach-numbers">
+<span id="sec-re-mach-nums"></span><h2>Reynolds and Mach Numbers<a class="headerlink" href="#reynolds-and-mach-numbers" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#reynolds-and-mach-numbers'"><span>#</span></a></h2>
+<p>For more discussion on dimensional analysis and similarity, see Appendix
+<a class="reference external" href="#dim_anal_sim">[dim_anal_sim]</a>. mach number = same compressibility
+effects, re = same viscous effects. mach number = internal/kinetic
+energy ratio</p>
+</section>
+<section id="types-of-flows">
+<span id="sec-flow-types"></span><h2>Types of Flows<a class="headerlink" href="#types-of-flows" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#types-of-flows'"><span>#</span></a></h2>
+<p>We make lots of assumptions when studying aerodynamics. Most of these
+assumptions help simplify the math, and then we add in corrections
+later. Let’s define some different types of flows and discuss what
+assumptions we make.</p>
+<ul class="simple">
+<li><p><strong>Compressible vs. Incompressible Flow</strong>: <span class="math notranslate nohighlight">\(\rho\)</span> constant</p></li>
+<li><p><strong>Rotational vs. Irrotational Flow</strong>: smiley faces</p></li>
+<li><p><strong>Viscous vs. Inviscid Flow</strong>: <span class="math notranslate nohighlight">\(\mu\)</span> is zero</p></li>
+<li><p><strong>Laminar vs. Turbulent Flow</strong>: you know it when you see it,
+veritasium video</p></li>
+<li><p><strong>Steady vs. Unsteady Flow</strong>: derivatives wrt time are zero</p></li>
+</ul>
+</section>
+<section id="aerodynamic-forces-and-moments">
+<span id="sec-forces-moments"></span><h2>Aerodynamic Forces and Moments<a class="headerlink" href="#aerodynamic-forces-and-moments" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#aerodynamic-forces-and-moments'"><span>#</span></a></h2>
+<p>cl, cd, cm</p>
+</section>
+<section id="some-important-math">
+<span id="sec-important-math"></span><h2>Some Important Math<a class="headerlink" href="#some-important-math" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#some-important-math'"><span>#</span></a></h2>
+<p>material derivative, eulerian vs lagrangian descriptions</p>
+<figure class="align-default" id="id11">
+<a class="reference internal image-reference" href="basics/images/Lagrangian_vs_Eulerian_frame_of_reference.pdfname:fig:lagrangian_eulerian"><img alt="basics/images/Lagrangian_vs_Eulerian_frame_of_reference.pdfname:fig:lagrangian_eulerian" src="basics/images/Lagrangian_vs_Eulerian_frame_of_reference.pdfname:fig:lagrangian_eulerian" style="width: 50.0%;"/>
+</a>
+<figcaption>
+<p><span class="caption-text">Eulerian (<span class="math notranslate nohighlight">\(E\)</span>) and Lagrangian (<span class="math notranslate nohighlight">\(L\)</span>) frames with regard to
+some fluid with flow field <span class="math notranslate nohighlight">\(Q\)</span> [Wikipedia]. Note that both
+frames “see” different derivatives.</span><a class="headerlink" href="#id11" title="Link to this image"><span>#</span></a></p>
+</figcaption>
+</figure>
+<aside class="footnote-list brackets">
+<aside class="footnote brackets" id="id8" role="doc-footnote">
+<span class="label"><span class="fn-bracket">[</span><a href="#id7" role="doc-backlink">1</a><span class="fn-bracket">]</span></span>
+<p>See Appendix <a class="reference external" href="#mean_free_path">[mean_free_path]</a> for a derivation
+of the mean free path equation.</p>
+</aside>
+</aside>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#what-is-aerodynamics'" class="reference internal" href="#what-is-aerodynamics">What is aerodynamics?</a></li>
+<li><a :data-current="activeSection === '#sec-perfect-gas'" class="reference internal" href="#sec-perfect-gas">Ideal Gas and Continuum Assumptions</a></li>
+<li><a :data-current="activeSection === '#relevant-fluid-quantities'" class="reference internal" href="#relevant-fluid-quantities">Relevant Fluid Quantities</a></li>
+<li><a :data-current="activeSection === '#reynolds-and-mach-numbers'" class="reference internal" href="#reynolds-and-mach-numbers">Reynolds and Mach Numbers</a></li>
+<li><a :data-current="activeSection === '#types-of-flows'" class="reference internal" href="#types-of-flows">Types of Flows</a></li>
+<li><a :data-current="activeSection === '#aerodynamic-forces-and-moments'" class="reference internal" href="#aerodynamic-forces-and-moments">Aerodynamic Forces and Moments</a></li>
+<li><a :data-current="activeSection === '#some-important-math'" class="reference internal" href="#some-important-math">Some Important Math</a></li>
+</ul>
+</div>
+</aside>
 </main>
 </div>
 </div><footer class="py-6 border-t border-border md:py-0">
@@ -126,5 +338,7 @@ Some Important Math</p>
 <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
 <script src="../_static/copybutton.js?v=f281be69"></script>
 <script defer="defer" src="../_static/theme.js?v=073f68d9"></script>
+<script>window.MathJax = {"tex": {"inlineMath": [["$", "$"], ["\\(", "\\)"]], "displayMath": [["$$", "$$"], ["\\[", "\\]"]]}}</script>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </body>
 </html>
