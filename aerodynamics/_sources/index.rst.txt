@@ -19,6 +19,4 @@ Inspired by Professor Fidkowski's notes and Alasdair Gray's AE 523 notes site.
    potential/potential
    airfoils/airfoils
    viscous/viscous
-   finite_wings/finite_wings
-   
-
+   wings/finite_wings
