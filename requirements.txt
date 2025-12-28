@@ -1,4 +1,4 @@
 sphinx
-sphinx-awesome-theme
+sphinxawesome-theme
 sphinx-copybutton
 myst-parser
