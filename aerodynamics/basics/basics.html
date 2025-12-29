@@ -7,15 +7,15 @@
 <meta content="white" media="(prefers-color-scheme: light)" name="theme-color"/>
 <meta content="black" media="(prefers-color-scheme: dark)" name="theme-color"/>
 <meta content="width=device-width, initial-scale=1" name="viewport"/>
-<title>Basics | Aerodynamics Notes</title>
-<meta content="Basics | Aerodynamics Notes" property="og:title"/>
-<meta content="Basics | Aerodynamics Notes" name="twitter:title"/>
+<title>1. Basics | Aerodynamics Notes</title>
+<meta content="1. Basics | Aerodynamics Notes" property="og:title"/>
+<meta content="1. Basics | Aerodynamics Notes" name="twitter:title"/>
 <link href="../_static/pygments.css?v=e72c8e07" rel="stylesheet" type="text/css"/>
 <link href="../_static/theme.css?v=42baaae4" rel="stylesheet" type="text/css"/>
 <link href="../_static/copybutton.css?v=76b2166b" rel="stylesheet" type="text/css"/>
 <link href="../search.html" rel="search" title="Search"/>
 <link href="../genindex.html" rel="index" title="Index"/>
-<link href="../kin_dyn/kinematics.html" rel="next" title="Kinematics of Fluids"/>
+<link href="../kin_dyn/kinematics.html" rel="next" title="2. Kinematics of Fluids"/>
 <link href="../index.html" rel="prev" title="Introduction to Aerodynamics"/>
 <script>
     <!-- Prevent Flash of wrong theme -->
@@ -71,12 +71,13 @@
 <div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Basics</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../kin_dyn/kinematics.html">Kinematics of Fluids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../kin_dyn/dynamics.html">Dynamics of Fluids</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../airfoils/airfoils.html">Airfoils</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../viscous/viscous.html">Viscous Flow</a></li>
-<li class="toctree-l1"><a class="reference internal" href="../wings/finite_wings.html">Finite Wings</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">1. Basics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kin_dyn/kinematics.html">2. Kinematics of Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kin_dyn/dynamics.html">3. Dynamics of Fluids</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../potential/potential_flow.html">4. Potential Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../airfoils/airfoils.html">5. Airfoils</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../viscous/viscous.html">6. Viscous Flow</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../wings/finite_wings.html">7. Finite Wings</a></li>
 </ul>
 </nav>
 </div>
@@ -96,18 +97,18 @@
 <path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
 </svg>
 </a>
-<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Basics</span>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap"><span class="section-number">1. </span>Basics</span>
 </nav>
 <div id="content" role="main">
 <section id="basics">
-<span id="sec-basics"></span><h1>Basics<a class="headerlink" href="#basics" title="Link to this heading"><span>#</span></a></h1>
+<span id="sec-basics"></span><h1><span class="section-number">1. </span>Basics<a class="headerlink" href="#basics" title="Link to this heading"><span>#</span></a></h1>
 <p>This book is a primer on aerodynamics, covering topics found in AE 325.
 For more in-depth content, three particularly good resources are John D.
 Anderson’s <a class="reference external" href="https://www.mheducation.com/highered/product/fundamentals-of-aerodynamics-anderson.html?viewOption=student/">*Fundamentals of Aerodynamics* textbook</a>,
 Mark Drela’s <a class="reference external" href="https://ocw.mit.edu/courses/16-01-unified-engineering-i-ii-iii-iv-fall-2005-spring-2006/pages/fluid-mechanics//">MIT Fluid Mechanics Course</a> , and
 Professor Fidkowski’s AE 325 Notes.</p>
 <section id="what-is-aerodynamics">
-<span id="sec-what-is-aero"></span><h2>What is aerodynamics?<a class="headerlink" href="#what-is-aerodynamics" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#what-is-aerodynamics'"><span>#</span></a></h2>
+<span id="sec-what-is-aero"></span><h2><span class="section-number">1.1. </span>What is aerodynamics?<a class="headerlink" href="#what-is-aerodynamics" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#what-is-aerodynamics'"><span>#</span></a></h2>
 <p>Aerospace engineers design vehicles that move through the air. To
 maximize the performance of these vehicles, we want to understand the
 body forces, moments, and pressure distributions so we know how and
@@ -190,7 +191,7 @@ figure out <strong>how air moves and the forces that cause, or arise from that
 motion</strong>.</p>
 </section>
 <section id="sec-perfect-gas">
-<span id="ideal-gas-and-continuum-assumptions"></span><h2>Ideal Gas and Continuum Assumptions<a class="headerlink" href="#sec-perfect-gas" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#sec-perfect-gas'"><span>#</span></a></h2>
+<span id="ideal-gas-and-continuum-assumptions"></span><h2><span class="section-number">1.2. </span>Ideal Gas and Continuum Assumptions<a class="headerlink" href="#sec-perfect-gas" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#sec-perfect-gas'"><span>#</span></a></h2>
 <p>Let’s make some more clearly defined assumptions about air that will
 allow us to treat it as continuous. Air is made up of a lot of molecules
 that are not in direct contact.</p>
@@ -221,7 +222,7 @@ will have oscillations - continuum assumption not value</p>
 <p>need <span class="math notranslate nohighlight">\(\lambda^3 &lt;&lt; V &lt;&lt; L^3\)</span></p>
 </section>
 <section id="relevant-fluid-quantities">
-<span id="sec-quantities"></span><h2>Relevant Fluid Quantities<a class="headerlink" href="#relevant-fluid-quantities" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#relevant-fluid-quantities'"><span>#</span></a></h2>
+<span id="sec-quantities"></span><h2><span class="section-number">1.3. </span>Relevant Fluid Quantities<a class="headerlink" href="#relevant-fluid-quantities" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#relevant-fluid-quantities'"><span>#</span></a></h2>
 <p>Particles bounce around a lot, so actual motion of a single particle is
 very random/chaotic. average out the randomness by looking at all the
 particles in small fluid elements to get point quantities.</p>
@@ -260,14 +261,14 @@ fluid.</p>
 </figure>
 </section>
 <section id="reynolds-and-mach-numbers">
-<span id="sec-re-mach-nums"></span><h2>Reynolds and Mach Numbers<a class="headerlink" href="#reynolds-and-mach-numbers" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#reynolds-and-mach-numbers'"><span>#</span></a></h2>
+<span id="sec-re-mach-nums"></span><h2><span class="section-number">1.4. </span>Reynolds and Mach Numbers<a class="headerlink" href="#reynolds-and-mach-numbers" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#reynolds-and-mach-numbers'"><span>#</span></a></h2>
 <p>For more discussion on dimensional analysis and similarity, see Appendix
 <a class="reference external" href="#dim_anal_sim">[dim_anal_sim]</a>. mach number = same compressibility
 effects, re = same viscous effects. mach number = internal/kinetic
 energy ratio</p>
 </section>
 <section id="types-of-flows">
-<span id="sec-flow-types"></span><h2>Types of Flows<a class="headerlink" href="#types-of-flows" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#types-of-flows'"><span>#</span></a></h2>
+<span id="sec-flow-types"></span><h2><span class="section-number">1.5. </span>Types of Flows<a class="headerlink" href="#types-of-flows" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#types-of-flows'"><span>#</span></a></h2>
 <p>We make lots of assumptions when studying aerodynamics. Most of these
 assumptions help simplify the math, and then we add in corrections
 later. Let’s define some different types of flows and discuss what
@@ -282,11 +283,11 @@ veritasium video</p></li>
 </ul>
 </section>
 <section id="aerodynamic-forces-and-moments">
-<span id="sec-forces-moments"></span><h2>Aerodynamic Forces and Moments<a class="headerlink" href="#aerodynamic-forces-and-moments" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#aerodynamic-forces-and-moments'"><span>#</span></a></h2>
+<span id="sec-forces-moments"></span><h2><span class="section-number">1.6. </span>Aerodynamic Forces and Moments<a class="headerlink" href="#aerodynamic-forces-and-moments" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#aerodynamic-forces-and-moments'"><span>#</span></a></h2>
 <p>cl, cd, cm</p>
 </section>
 <section id="some-important-math">
-<span id="sec-important-math"></span><h2>Some Important Math<a class="headerlink" href="#some-important-math" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#some-important-math'"><span>#</span></a></h2>
+<span id="sec-important-math"></span><h2><span class="section-number">1.7. </span>Some Important Math<a class="headerlink" href="#some-important-math" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#some-important-math'"><span>#</span></a></h2>
 <p>material derivative, eulerian vs lagrangian descriptions</p>
 <figure class="align-default" id="id5">
 <img alt="../_images/Lagrangian_vs_Eulerian_frame_of_reference.pdf" src="../_images/Lagrangian_vs_Eulerian_frame_of_reference.pdf"/>
@@ -308,13 +309,13 @@ of the mean free path equation.</p>
 </div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
 <div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
 <ul>
-<li><a :data-current="activeSection === '#what-is-aerodynamics'" class="reference internal" href="#what-is-aerodynamics">What is aerodynamics?</a></li>
-<li><a :data-current="activeSection === '#sec-perfect-gas'" class="reference internal" href="#sec-perfect-gas">Ideal Gas and Continuum Assumptions</a></li>
-<li><a :data-current="activeSection === '#relevant-fluid-quantities'" class="reference internal" href="#relevant-fluid-quantities">Relevant Fluid Quantities</a></li>
-<li><a :data-current="activeSection === '#reynolds-and-mach-numbers'" class="reference internal" href="#reynolds-and-mach-numbers">Reynolds and Mach Numbers</a></li>
-<li><a :data-current="activeSection === '#types-of-flows'" class="reference internal" href="#types-of-flows">Types of Flows</a></li>
-<li><a :data-current="activeSection === '#aerodynamic-forces-and-moments'" class="reference internal" href="#aerodynamic-forces-and-moments">Aerodynamic Forces and Moments</a></li>
-<li><a :data-current="activeSection === '#some-important-math'" class="reference internal" href="#some-important-math">Some Important Math</a></li>
+<li><a :data-current="activeSection === '#what-is-aerodynamics'" class="reference internal" href="#what-is-aerodynamics">1.1. What is aerodynamics?</a></li>
+<li><a :data-current="activeSection === '#sec-perfect-gas'" class="reference internal" href="#sec-perfect-gas">1.2. Ideal Gas and Continuum Assumptions</a></li>
+<li><a :data-current="activeSection === '#relevant-fluid-quantities'" class="reference internal" href="#relevant-fluid-quantities">1.3. Relevant Fluid Quantities</a></li>
+<li><a :data-current="activeSection === '#reynolds-and-mach-numbers'" class="reference internal" href="#reynolds-and-mach-numbers">1.4. Reynolds and Mach Numbers</a></li>
+<li><a :data-current="activeSection === '#types-of-flows'" class="reference internal" href="#types-of-flows">1.5. Types of Flows</a></li>
+<li><a :data-current="activeSection === '#aerodynamic-forces-and-moments'" class="reference internal" href="#aerodynamic-forces-and-moments">1.6. Aerodynamic Forces and Moments</a></li>
+<li><a :data-current="activeSection === '#some-important-math'" class="reference internal" href="#some-important-math">1.7. Some Important Math</a></li>
 </ul>
 </div>
 </aside>
