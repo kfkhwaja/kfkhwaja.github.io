@@ -5,10 +5,9 @@ Basics
 
 This book is a primer on aerodynamics, covering topics found in AE 325.
 For more in-depth content, three particularly good resources are John D.
-Anderson's *Fundamentals of Aerodynamics* textbook
-:raw-latex:`\cite{anderson2016fundamentals}`, Mark Drela's MIT Fluid
-Mechanics Course :raw-latex:`\cite{drela_mit_ocw_fluid_mechanics}`, and
-Professor Fidkowski's AE 325 Notes :raw-latex:`\cite{fidkowskiAE325}`.
+Anderson's `*Fundamentals of Aerodynamics* textbook <https://www.mheducation.com/highered/product/fundamentals-of-aerodynamics-anderson.html?viewOption=student/>`_,
+Mark Drela's `MIT Fluid Mechanics Course <https://ocw.mit.edu/courses/16-01-unified-engineering-i-ii-iii-iv-fall-2005-spring-2006/pages/fluid-mechanics//>`_ , and
+Professor Fidkowski's AE 325 Notes.
 
 .. _`sec:what_is_aero`:
 
@@ -98,7 +97,6 @@ A certain shear stress produces a proportional strain rate,
 
 .. figure:: Deformation_solid_vs_fluid.png
    name: fig:solid_vs_fluid
-   :width: 65.0%
 
    Solid vs. fluid deformation when acted on by a shear stress
    [Wikipedia].
