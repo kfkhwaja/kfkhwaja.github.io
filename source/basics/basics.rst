@@ -96,7 +96,6 @@ A certain shear stress produces a proportional strain rate,
 :math:`\mu`.
 
 .. figure:: Deformation_solid_vs_fluid.png
-   name: fig:solid_vs_fluid
 
    Solid vs. fluid deformation when acted on by a shear stress
    [Wikipedia].
