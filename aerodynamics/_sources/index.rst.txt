@@ -7,11 +7,9 @@ Introduction to Aerodynamics
 ==========================
 
 .. image:: Cessna_downwash.jpg
-   name: fig:downwash
-   :width: 30.0%
 
 Kabir's notes on aerodynamics, covering material from AE 325 at the University of Michigan. 
-Inspired by Professor Fidkowski's notes and `Alasdair Gray's AE 523 notes site<https://a-cgray.github.io/AE523-Fall23/intro.html/>`_.
+Inspired by Professor Fidkowski's notes and `Alasdair Gray's AE 523 notes site <https://a-cgray.github.io/AE523-Fall23/intro.html/>`_.
 
 .. toctree::
    :maxdepth: 2
