@@ -96,7 +96,7 @@ A certain shear stress produces a proportional strain rate,
 :math:`\dot{\theta}`, and these are related by the dynamic viscosity,
 :math:`\mu`.
 
-.. figure:: images/Deformation_solid_vs_fluid.png
+.. figure:: Deformation_solid_vs_fluid.png
    name: fig:solid_vs_fluid
    :width: 65.0%
 
@@ -211,7 +211,7 @@ fluid.
 
 thermo stuff ideal gas law, universal gas constant
 
-.. figure:: images/pressure.pdf
+.. figure:: pressure.pdf
    name: fig:pressure
    :width: 40.0%
 
@@ -262,7 +262,7 @@ Some Important Math
 
 material derivative, eulerian vs lagrangian descriptions
 
-.. figure:: images/Lagrangian_vs_Eulerian_frame_of_reference.pdf
+.. figure:: Lagrangian_vs_Eulerian_frame_of_reference.pdf
    name: fig:lagrangian_eulerian
    :width: 50.0%
 
