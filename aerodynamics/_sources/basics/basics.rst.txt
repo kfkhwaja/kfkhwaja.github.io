@@ -209,8 +209,6 @@ fluid.
 thermo stuff ideal gas law, universal gas constant
 
 .. figure:: pressure.pdf
-   name: fig:pressure
-   :width: 40.0%
 
    Pressure is the force/area acting normal to a surface.
 
@@ -260,8 +258,6 @@ Some Important Math
 material derivative, eulerian vs lagrangian descriptions
 
 .. figure:: Lagrangian_vs_Eulerian_frame_of_reference.pdf
-   name: fig:lagrangian_eulerian
-   :width: 50.0%
 
    Eulerian (:math:`E`) and Lagrangian (:math:`L`) frames with regard to
    some fluid with flow field :math:`Q` [Wikipedia]. Note that both
